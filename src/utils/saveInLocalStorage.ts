@@ -1,0 +1,1 @@
+export const saveInLocalStorage = <T>(itemName: string, data: T) => localStorage.setItem(itemName, JSON.stringify(data));

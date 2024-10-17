@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-900 text-slate-300
+}
+
+button {
+    @apply rounded-md px-2 py-1 text-white;
+}
+
+span {
+    @apply text-wrap whitespace-break-spaces capitalize px-2;
+}

@@ -1,0 +1,1 @@
+export const getById = (id: string, lista: Record<string, any>[]) => lista.find(l => l.id === id);

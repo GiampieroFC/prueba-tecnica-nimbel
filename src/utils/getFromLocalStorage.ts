@@ -1,0 +1,1 @@
+export const getFromLocalStorage = <T>(itemName: string): T | null => JSON.parse(localStorage.getItem(itemName) || '[]');
