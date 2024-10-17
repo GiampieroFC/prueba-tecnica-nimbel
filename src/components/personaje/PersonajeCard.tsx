@@ -20,10 +20,13 @@ interface PersonajeCardProps {
     actions?: Action[];
 }
 
+// TODO: Borde de neón que gira para cada tarjeta
+
 export const PersonajeCard = ({ personaje: { edad, habilidad, nombre, raza, img }, actions }: PersonajeCardProps) => {
 
     return (
-        <div className="flex flex-row border flex-wrap-reverse p-2 gap-2 w-96 rounded">
+        <div className="flex flex-row border flex-wrap-reverse p-2 gap-2 box-border w-[300px] md:w-[450px] justify-evenly rounded">
+
             <div className="flex flex-col w-1/2">
 
                 <p>
@@ -46,7 +49,7 @@ export const PersonajeCard = ({ personaje: { edad, habilidad, nombre, raza, img 
                     <span className="font-mono">{habilidad}</span>
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-nowrap gap-2 my-2">
                     {
                         !!actions?.length
                         &&
@@ -66,6 +69,7 @@ export const PersonajeCard = ({ personaje: { edad, habilidad, nombre, raza, img 
 
             <img
                 src={img}
+                className="rounded-full"
                 width={175}
                 alt={`${raza} ${nombre}`}
             />

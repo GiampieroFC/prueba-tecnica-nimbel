@@ -7,6 +7,7 @@ import { Form, type FormProps } from './components/shared/Form';
 import { useManagePersonaje } from './hooks/useManagePersonaje';
 import { getById } from './utils/encontrarPersonaje';
 
+// TODO: Crear una nueva rama
 
 function App() {
 
@@ -74,7 +75,7 @@ function App() {
   return (
     <div className='flex flex-col gap-4 p-5 items-center'>
 
-      <button className='bg-blue-500 p-3 w-96' onClick={addPersonaje}>Genera un personaje</button>
+      <button className='bg-blue-500 p-3 w-[300px]' onClick={addPersonaje}>Genera un personaje</button>
 
       <Form {...formProps} />
 

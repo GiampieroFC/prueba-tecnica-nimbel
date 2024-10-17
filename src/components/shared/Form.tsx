@@ -12,7 +12,7 @@ export const Form = ({ onSubmit, fields, isDisableButton }: FormProps) => {
 
     return (
 
-        <form className="flex flex-col border p-3 gap-2 w-96 rounded" onSubmit={onSubmit}>
+        <form className="flex flex-col border p-3 gap-2 w-[300px] rounded" onSubmit={onSubmit}>
 
             {
                 fields.map(f => (
