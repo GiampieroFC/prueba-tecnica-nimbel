@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { generarPersonaje, Personaje } from "../data/getPersonajes";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 import { saveInLocalStorage } from "../utils/saveInLocalStorage";
