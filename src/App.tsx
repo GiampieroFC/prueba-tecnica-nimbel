@@ -73,13 +73,17 @@ function App() {
   };
 
   return (
-    <div className='flex flex-col gap-10 py-10 px-3 items-center'>
+    <div className='flex flex-col gap-10 py-10 px-7'>
 
-      <button className='bg-blue-500 p-3 w-[300px]' onClick={addPersonaje}>Genera un personaje</button>
+      <div className='flex flex-col items-center gap-10'>
 
-      <Form {...formProps} />
+        <button className='bg-blue-500 p-3 w-[300px]' onClick={addPersonaje}>Genera un personaje</button>
 
-      <div className='flex flex-row flex-wrap justify-center gap-4'>
+        <Form {...formProps} />
+
+      </div>
+
+      <div className='flex flex-row flex-wrap justify-start gap-4'>
         {
           !personajes.length
             ? <span className='tracking-widest font-light'>No hay personajes . . . </span>
@@ -103,8 +107,6 @@ function App() {
               />))
         }
       </div>
-
-
     </div >
   );
 }
