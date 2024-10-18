@@ -31,7 +31,7 @@ export const Form = ({ onSubmit, fields, isDisableButton }: FormProps) => {
                 disabled={isDisableButton}
                 className={isDisableButton ? ColorButton.gray : ColorButton.orange}
             >
-                {isDisableButton ? <span className="text-gray-400 font-bold">Primero elige un personaje para editar</span> : "Guardar cambios"}
+                {isDisableButton ? <span className="text-gray-400 font-bold break-keep">Primero elige un personaje para editar</span> : "Guardar cambios"}
             </button>
 
         </form>);
