@@ -6,8 +6,6 @@ import { Form, type FormProps } from './components/shared/Form';
 import { useManagePersonaje } from './hooks/useManagePersonaje';
 import { getById } from './utils/encontrarPersonaje';
 
-// TODO: Crear una nueva rama
-
 function App() {
 
   const { personajes, addPersonaje, editPersonaje, deletePersonaje } = useManagePersonaje();
@@ -30,14 +28,17 @@ function App() {
 
   const onSubmitPersonajeForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     let idPersonaje = form?.id;
     if (!idPersonaje || !form) { setIsDisableForm(true); return; }
-
     editPersonaje(idPersonaje, form);
-
     setForm({});
     setIsDisableForm(true);
+  };
+
+  const deleteHandler = (id: string) => {
+    setForm({});
+    setIsDisableForm(true);
+    deletePersonaje(id);
   };
 
   const formProps: FormProps = {
@@ -81,7 +82,7 @@ function App() {
       <div className='flex flex-row flex-wrap justify-center gap-4'>
         {
           !personajes.length
-            ? "No hay personajes"
+            ? <span className='tracking-widest font-light'>No hay personajes . . . </span>
             : personajes.map(p => (
               <PersonajeCard
                 personaje={p}
@@ -89,7 +90,7 @@ function App() {
                 actions={
                   [
                     {
-                      action: () => deletePersonaje(p.id),
+                      action: () => deleteHandler(p.id),
                       name: "Eliminar"
                     },
                     {
