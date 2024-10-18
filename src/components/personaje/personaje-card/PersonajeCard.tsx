@@ -1,4 +1,5 @@
-import { Personaje } from "../../data/getPersonajes";
+import { Personaje } from "../../../data/getPersonajes";
+import { FieldDataValue, FieldDataValueProps } from "./ui/FieldDataValue";
 
 export enum ColorButton {
     red = "bg-red-600",
@@ -22,30 +23,33 @@ interface PersonajeCardProps {
 
 export const PersonajeCard = ({ personaje: { edad, habilidad, nombre, raza, img }, actions }: PersonajeCardProps) => {
 
+    const fields: FieldDataValueProps[] = [
+        {
+            name: "nombre",
+            value: nombre,
+        },
+        {
+            name: "raza",
+            value: raza,
+        },
+        {
+            name: "edad",
+            value: edad + " años",
+        },
+        {
+            name: "habilidad",
+            value: habilidad,
+        },
+    ];
+
     return (
         <div className="flex flex-row border flex-wrap-reverse p-2 gap-2 box-border w-[300px] lg:w-[450px] justify-evenly rounded border-gray-800 items-center m-auto h-[450px] lg:h-72">
 
             <div className="flex justify-start w-4/5 flex-col lg:w-1/2">
 
-                <p className="line-clamp-2" >
-                    <span className="text-sm p-0 text-gray-400">Nombre:</span>
-                    <span className="font-mono">{nombre}</span>
-                </p>
-
-                <p className="line-clamp-2" >
-                    <span className="text-sm p-0 text-gray-400">Raza:</span>
-                    <span className="font-mono">{raza}</span>
-                </p>
-
-                <p className="line-clamp-2" >
-                    <span className="text-sm p-0 text-gray-400">Edad:</span>
-                    <span className="font-mono lowercase ">{edad} años</span>
-                </p>
-
-                <p className="line-clamp-2" >
-                    <span className="text-sm p-0 text-gray-400">Habilidad:</span>
-                    <span className="font-mono">{habilidad}</span>
-                </p>
+                {
+                    fields.map(f => <FieldDataValue key={f.name} {...f} />)
+                }
 
                 <div className="flex flex-nowrap gap-2 my-2">
                     {

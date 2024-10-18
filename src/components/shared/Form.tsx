@@ -1,4 +1,4 @@
-import { ColorButton } from "../personaje/PersonajeCard";
+import { ColorButton } from "../personaje/personaje-card/PersonajeCard";
 import { InputForm, InputFormProps } from "./InputForm";
 
 export interface FormProps {

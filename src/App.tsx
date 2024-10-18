@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { type Personaje } from './data/getPersonajes';
-import { ColorButton, PersonajeCard } from './components/personaje/PersonajeCard';
+import { ColorButton, PersonajeCard } from './components/personaje/personaje-card/PersonajeCard';
 import { Form, type FormProps } from './components/shared/Form';
 import { useManagePersonaje } from './hooks/useManagePersonaje';
 import { getById } from './utils/encontrarPersonaje';

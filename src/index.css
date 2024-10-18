@@ -11,5 +11,5 @@ button {
 }
 
 span {
-    @apply text-balance overflow-clip capitalize px-2;
+    @apply text-balance overflow-clip px-2;
 }

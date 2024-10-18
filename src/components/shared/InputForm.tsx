@@ -13,7 +13,7 @@ export const InputForm = ({ isDisable, value, onChangeInput, name }: InputFormPr
             {name}: <input
                 disabled={isDisable}
                 name={name}
-                className='border px-2 rounded-md w-full bg-transparent capitalize'
+                className='border px-2 rounded-md w-full bg-transparent'
                 type="text"
                 value={value}
                 onChange={onChangeInput}

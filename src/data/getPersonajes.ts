@@ -1,3 +1,4 @@
+import { capitalizeString } from "../utils/capitalizeString";
 import { getRandomInt } from "../utils/getRandomInt";
 import { getRandomValue } from "../utils/getRandomValue";
 
@@ -15,27 +16,27 @@ enum Habilidades {
     invisibilidad = 'invisibilidad',
     superfuerza = 'superfuerza',
     telepatía = 'telepatía',
-    controlDelAgua = 'control del Agua',
-    controlDelaTierra = 'control de la Tierra',
-    controlDelViento = 'control del Viento',
-    controlDelFuego = 'control del Fuego',
+    controlDelAgua = 'control del agua',
+    controlDelaTierra = 'control de la tierra',
+    controlDelViento = 'control del viento',
+    controlDelFuego = 'control del fuego',
     curación = 'curación',
 }
 
 const nombres: string[] = [
-    "Albert",
-    "Aldric",
-    "Arwen",
-    "Drago",
-    "Fenris",
-    "Giampiero",
-    "Korvash",
-    "Lira",
-    "Nyx",
-    "Ragnar",
-    "Rubén",
-    "Selene",
-    "Valeria",
+    "albert",
+    "aldric",
+    "arwen",
+    "drago",
+    "fenris",
+    "giampiero",
+    "korvash",
+    "lira",
+    "nyx",
+    "ragnar",
+    "rubén",
+    "selene",
+    "valeria",
 ];
 
 export interface Personaje {
@@ -51,10 +52,10 @@ export interface Personaje {
 export const generarPersonaje = async (): Promise<Personaje> => {
 
     const id = crypto.randomUUID();
-    const edad = getRandomInt(1000);
-    const nombre = `${getRandomValue(nombres)}_${new Date().getFullYear() - edad}`;
-    const raza = getRandomValue(Razas);
-    const img = `https://picsum.photos/seed/${nombre}/200`;
+    const edad = getRandomInt(777);
+    const nombre = `${capitalizeString(getRandomValue(nombres))}_${new Date().getFullYear() - edad}`;
+    const raza = capitalizeString(getRandomValue(Razas)) as Razas;
+    const img = `https://picsum.photos/seed/${id}/200`;
 
     const nuevoPersonaje: Personaje = {
         id,
@@ -62,7 +63,7 @@ export const generarPersonaje = async (): Promise<Personaje> => {
         edad,
         raza,
         img,
-        habilidad: getRandomValue(Habilidades),
+        habilidad: capitalizeString(getRandomValue(Habilidades)) as Habilidades,
     };
 
     return nuevoPersonaje;
