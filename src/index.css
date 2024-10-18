@@ -7,9 +7,9 @@ body {
 }
 
 button {
-    @apply rounded-md px-2 py-1 text-white;
+    @apply rounded-md px-2 py-1 text-gray-100;
 }
 
 span {
-    @apply text-wrap whitespace-break-spaces capitalize px-2;
+    @apply text-wrap whitespace-break-spaces break-all break-words overflow-clip capitalize px-2;
 }

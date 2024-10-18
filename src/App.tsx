@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import './App.css';
 import { type Personaje } from './data/getPersonajes';
 import { ColorButton, PersonajeCard } from './components/personaje/PersonajeCard';
 import { Form, type FormProps } from './components/shared/Form';
@@ -73,13 +72,13 @@ function App() {
   };
 
   return (
-    <div className='flex flex-col gap-4 p-5 items-center'>
+    <div className='flex flex-col gap-10 py-10 px-3 items-center'>
 
       <button className='bg-blue-500 p-3 w-[300px]' onClick={addPersonaje}>Genera un personaje</button>
 
       <Form {...formProps} />
 
-      <div className='flex flex-row flex-wrap justify-evenly gap-4'>
+      <div className='flex flex-row flex-wrap justify-center gap-4'>
         {
           !personajes.length
             ? "No hay personajes"
