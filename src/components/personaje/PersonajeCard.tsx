@@ -39,7 +39,7 @@ export const PersonajeCard = ({ personaje: { edad, habilidad, nombre, raza, img 
 
                 <p className="line-clamp-2" >
                     <span className="text-sm p-0 text-gray-400">Edad:</span>
-                    <span className="font-mono">{edad}</span>
+                    <span className="font-mono">{edad} años</span>
                 </p>
 
                 <p className="line-clamp-2" >
