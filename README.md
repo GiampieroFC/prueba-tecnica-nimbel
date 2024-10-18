@@ -1,50 +1,116 @@
-# React + TypeScript + Vite
+# Prueba Técnica de la empresa Nimbel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación desarrollada con **React**, **Vite** y **TypeScript** que permite gestionar personajes mediante una interfaz simple y organizada. La aplicación utiliza **TailwindCSS** para los estilos y varios hooks y utilidades personalizadas para la lógica de gestión de personajes.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para ejecutar este proyecto, necesitarás tener instalado en tu máquina:
 
-## Expanding the ESLint configuration
+- **Node.js** (versión 18 o superior) o **Bun**
+- **pnpm**, **npm**, **bun** o **yarn** como gestor de paquetes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalación
 
-- Configure the top-level `parserOptions` property like this:
+Sigue los pasos a continuación para clonar el repositorio y levantar la aplicación en tu máquina local:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clonar este repositorio
+
+```bash
+git clone https://github.com/GiampieroFC/prueba-tecnica-nimbel.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Navegar al directorio del proyecto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd prueba-tecnica-nimbel
 ```
+
+### 3. Instalar las dependencias
+
+Si usas **npm**, ejecuta:
+
+```bash
+npm install
+```
+
+Si prefieres **yarn**, ejecuta:
+
+```bash
+yarn install
+```
+
+Si prefieres **pnpm**, ejecuta:
+
+```bash
+pnpm install
+```
+
+### 4. Levantar el servidor local
+
+Una vez instaladas las dependencias, puedes iniciar la aplicación ejecutando:
+
+Para **npm**:
+
+```bash
+npm run dev
+```
+
+Para **yarn**:
+
+```bash
+yarn dev
+```
+
+Para **pnpm**:
+
+```bash
+pnpm dev
+```
+
+Esto abrirá la aplicación en tu navegador predeterminado. Por defecto, estará disponible en `http://localhost:5173`.
+
+## Estructura del Proyecto
+
+```bash
+root
+├── public/
+├── src/                   # Código fuente de la aplicación
+│   ├── components/        # Componentes reutilizables
+│   ├── data/              # Gestión de datos
+│   ├── hooks/             # Hooks personalizados
+│   ├── utils/             # Funciones utilitarias
+│   ├── App.tsx            # Componente principal de la aplicación
+│   ├── index.css          # Estilos globales
+│   ├── main.tsx           # Punto de entrada principal
+│   └── vite-env.d.ts      # Tipos de Vite
+├── index.html             # Página HTML principal
+├── package.json           # Dependencias y scripts del proyecto
+├── postcss.config.js      # Configuración de PostCSS
+├── README.md              # Documentación del proyecto
+├── tailwind.config.js     # Configuración de TailwindCSS
+└── vite.config.ts         # Configuración de Vite
+```
+## Scripts Disponibles
+
+En este proyecto puedes ejecutar los siguientes scripts con el gestor de paquetes que uses, pondré el ejemplo con pnpm:
+
+- `pnpm dev`: Inicia el servidor de desarrollo.
+- `pnpm build`: Genera la versión de producción del proyecto.
+- `pnpm lint`: Revisa el código en busca de errores con ESLint.
+- `pnpm preview`: Previsualiza la aplicación en su versión de producción después de haber ejecutado el comando `build`.
+
+
+## Dependencias
+
+- **React**: Biblioteca principal para construir la interfaz de usuario.
+- **Vite**: Herramienta de construcción rápida para aplicaciones web modernas.
+- **TailwindCSS**: Utilizado para estilizar la interfaz de forma eficiente.
+- **TypeScript**: Tipado estático para una mayor robustez en el desarrollo.
+
+## Notas
+
+- Recuerda que la aplicación utiliza `localStorage` para persistir temporalmente los cambios en el navegador.
+
+## Contribuciones
+
+Si encuentras algún bug o deseas mejorar alguna parte del proyecto, ¡no dudes en abrir un issue o enviar un pull request!
